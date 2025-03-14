@@ -7,29 +7,34 @@
 </head>
 <body>
     <h1>Insert User</h1>
-    <form id="userForm">
+    <form id="Futbolistaform">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
         <br>
-        <button type="submit">Submit</button>
+        <label for="Posicion">Posicion:</label>
+        <input type="text" id="Posicion" name="Posicion" required>
+        <br>
+         <button type="submit">Submit</button>
+        <label for="Numero">Numero:</label>
+        <input type="number" id="Numero" name="Numero" required>
+        <br>
     </form>
     
 
     <script>
-        document.getElementById('userForm').addEventListener('submit', async (event) => {
+        document.getElementById('Futbolistaform').addEventListener('submit', async (event) => {
             event.preventDefault();
             const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
+            const Posicion = document.getElementById('Posicion').value;
+            const Numero = document.getElementById('Numero').value;
 
-            const response = await fetch('http://localhost:3000/api/users', {
+            const response = await fetch('http://localhost:3000/api/futbolistas', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ name, email })
+                body: JSON.stringify({ name, Posicion,Numero })
             });
 
             if (response.ok) {
