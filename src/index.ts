@@ -2,6 +2,7 @@ import { serve } from '@hono/node-server'
 import { Hono } from 'hono'
 import { Sequelize, DataTypes } from 'sequelize'
 import { cors } from 'hono/cors'
+import 'dotenv/config'
 
 const app = new Hono()
 
@@ -11,13 +12,13 @@ app.use('*', cors())
 app.get('/', (c) => {
   return c.text('Hello Wong!')
 })
-
+console.log(process.env.DEV_DATABASE)
 const sequelize = new Sequelize({
-    dialect: '',
-    host: '',
-    username: '',
-    password: '',
-    database: ''
+    dialect: 'mysql',
+    host: process.env.DEV_HOST,
+    username: process.env.DEV_USERNAME,
+    password: process.env.DEV_PASSWORD,
+    database: process.env.DEV_DATABASE,
 }); // Example for SQLite, change as needed
 
 const User = sequelize.define('User', {
