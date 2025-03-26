@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Deploy to Server
       - name: Execute server and restart pm2
         uses: appleboy/ssh-action@v1.2.1
         with:
