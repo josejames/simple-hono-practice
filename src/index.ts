@@ -10,7 +10,7 @@ const app = new Hono()
 app.use('*', cors())
 
 app.get('/', (c) => {
-  return c.text('Hello Wong!')
+  return c.text('Hello Wong esto esta corriendo de manera exitosa felicidades !')
 })
 console.log(process.env.DEV_DATABASE)
 const sequelize = new Sequelize({
