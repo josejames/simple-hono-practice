@@ -17,4 +17,9 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           port: ${{ secrets.DEPLOY_PORT }}
           script: |
+            cd simple-hono-practice-dev
+            cd simple-hono-practice
+            git pull
+            pm2 restart demonio_dev
+            pm2 list
             echo "Deployed successfully form dev =)"
