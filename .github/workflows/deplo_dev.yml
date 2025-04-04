@@ -17,7 +17,7 @@ jobs:
           key: ${{ secrets.DEPLOY_KEY }}
           port: ${{ secrets.DEPLOY_PORT }}
           script: |
-            cd simple-hono-practice-dev
+            cd simple-hono-dev
             cd simple-hono-practice
             pwd
             git pull origin dev
