@@ -13,7 +13,7 @@ app.get('/', (c) => {
   return c.text('Hello Wong esto esta corriendo de manera exitosa felicidades !')
 })
 app.get('/dev',(c)=>{
-    return c.text('Texto de prueba para una nueva rama agregando mas texto jejejej ');
+    return c.text('Texto de prueba para una nueva rama agregando mas texto jejejej este es el seugno intento  ');
 })
 console.log(process.env.DEV_DATABASE)
 const sequelize = new Sequelize({

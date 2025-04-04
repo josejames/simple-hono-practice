@@ -19,7 +19,9 @@ jobs:
           script: |
             cd simple-hono-practice-dev
             cd simple-hono-practice
-            git pull
+            pwd
+            git pull origin dev
+            echo "intentando pull"
             pm2 restart demonio_dev
             pm2 list
             echo "Deployed successfully form dev =)"
